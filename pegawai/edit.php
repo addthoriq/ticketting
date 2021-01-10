@@ -16,7 +16,7 @@
             <?php
                 include '../koneksi.php';
 
-                $id = $_GET['id_pegawai'];
+                $id = $_GET['id'];
                 $querry = "SELECT * FROM pegawai WHERE id_pegawai='$id'";
                 $result = mysqli_query($koneksi, $querry);
                 $row = mysqli_fetch_assoc($result);

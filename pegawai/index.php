@@ -30,7 +30,7 @@
                                     <td>".$nomor++."</td>
                                     <td>".$row['nama_pegawai']."</td>
                                     <td>
-                                        <a class='btn-edit' href='edit.php?id_pegawai=".$row['id_pegawai']."'>Edit </a>
+                                        <a class='btn-edit' href='edit.php?id=".$row['id_pegawai']."'>Edit </a>
                                         <a class='btn-hapus' href='hapus.php?id_pegawai=".$row['id_pegawai']."' onclick='javascript:return confirm(\"Apakah anda yakin ingin menghapus data ini?\")'> Hapus</a>
                                     </td>
                                 </tr>

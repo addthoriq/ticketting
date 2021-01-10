@@ -36,7 +36,7 @@
                                     <td>".$row['email']."</td>
                                     <td>".$row['username']."</td>
                                     <td>
-                                        <a class='btn-edit' href=''>Edit</a>
+                                        <a class='btn-edit' href='edit.php?id=".$row['id_pelanggan']."'>Edit</a>
                                         <a class='btn-hapus' href=''>Delete</a>
                                     </td>
                                 </tr>
