@@ -120,3 +120,11 @@ table th {
   background-color: #f5691d;
   color: white;
 }
+.error{
+    background-color: #ff8282;
+    color: #9e1527;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+}
