@@ -37,7 +37,7 @@
                                     <td>".$row['username']."</td>
                                     <td>
                                         <a class='btn-edit' href='edit.php?id=".$row['id_pelanggan']."'>Edit</a>
-                                        <a class='btn-hapus' href=''>Delete</a>
+                                        <a class='btn-hapus' href='hapus.php?id=".$row['id_pelanggan']."' onclick='javascript:return confirm(\"Apakah anda yakin ingin menghapus data ini?\")'>Delete</a>
                                     </td>
                                 </tr>
                             ";
