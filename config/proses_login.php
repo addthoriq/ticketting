@@ -2,8 +2,25 @@
 session_start();
 include 'koneksi.php';
 
-// Proses login dari halaman Register
-if (isset($_GET['username'])) {
+// Proses login dari halaman Pemesanan
+if (isset($_GET['tx']) && isset($_GET['username'])) {
+    $usr = $_GET['username'];
+    $tx = $_GET['tx'];
+    $query = "SELECT * FROM pelanggan WHERE username = '$usr'";
+    $result = mysqli_query($koneksi, $query);
+    $row = mysqli_fetch_assoc($result);
+
+    $_SESSION['id'] = $row['id_pelanggan'];
+    $_SESSION['nama'] = $row['nama_pelanggan'];
+    $_SESSION['email'] = $row['email'];
+    $_SESSION['telpon'] = $row['nomor_telfon'];
+    $_SESSION['username'] = $row['username'];
+    $_SESSION['password'] = $row['password'];
+
+    header("Location: ../pemesanan/index.php?tx=".$tx);
+
+// Proses Login dari halaman Register
+}elseif (isset($_GET['username'])) {
     $usr = $_GET['username'];
     $query = "SELECT * FROM pelanggan WHERE username = '$usr'";
     $result = mysqli_query($koneksi, $query);

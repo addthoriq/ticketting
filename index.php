@@ -1,5 +1,6 @@
 <?php
 session_start();
+// Belum Login
 if (!isset($_SESSION['id'])) {
 ?>
 <!DOCTYPE html>
@@ -13,9 +14,10 @@ if (!isset($_SESSION['id'])) {
         <?php
             include 'config/header.php';
         ?>
+        <h1>Hai kamu</h1>
     </body>
 </html>
-
+<!-- Sudah Login -->
 <?php
 }else {
 ?>
