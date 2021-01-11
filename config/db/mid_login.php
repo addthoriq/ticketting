@@ -22,6 +22,8 @@ if(isset($_GET['null'])){
     $account = explode("=", $exp[1]);
     if (str_contains($account[1], '%40')) {
         $ac = str_replace("%40", "@", $account[1]);
+    }elseif (str_contains($account[1], '+')) {
+        $ac = str_replace("+", " ", $account[1]);
     }else {
         $ac = $account[1];
     }
@@ -36,6 +38,13 @@ if(isset($_GET['null'])){
     $exp = explode("&", $ss);
     $account = explode("=", $exp[1]);
     $ac = $account[1];
+}elseif (isset($_GET['notreg'])) {
+    $msg = "Email atau Username tidak terdaftar";
+    echo "
+    <div class='error'>
+        <p>".nl2br($msg)."</p>
+    </div>
+    ";
 }
 
 // $nama1 = explode("=", $exp[2]);

@@ -1,3 +1,8 @@
+<?php
+session_start();
+// Belum Login
+if (!isset($_SESSION['id'])) {
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
@@ -7,11 +12,25 @@
     </head>
     <body>
         <?php
-            include '../header.php';
+            include '../config/header.php';
         ?>
-
-        <div>
-            <a href="tambah.php" class="btn-tambah">Tambah</a>
+        <h1>Hai kamu</h1>
+    </body>
+</html>
+<!-- Sudah Login -->
+<?php
+}else {
+?>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Tiket Pesawat</title>
+        <link rel="stylesheet" href="../gaya.css">
+    </head>
+    <body>
+        <?php include '../config/header.php'; ?>
+        <div style="margin-top: 20px; padding-top:20px">
             <table border="1" class="senter" width="100%">
                 <tr>
                     <th>Nomor</th>
@@ -20,7 +39,7 @@
                     <th>Tindakan</th>
                 </tr>
                 <?php
-                    include '../koneksi.php';
+                    include '../config/koneksi.php';
                     $nomor = 1;
                     $querry = "SELECT
                     pegawai.nama_pegawai as nama,
@@ -38,8 +57,7 @@
                                     <td>".$row['trx']."</td>
                                     <td>".$row['nama']."</td>
                                     <td>
-                                        <a class='btn-edit' href=''>Edit</a>
-                                        <a class='btn-hapus' href=''>Delete</a>
+                                        <a class='btn-edit' href='detail.php?id=".$row['trx']."'>Lihat</a>
                                     </td>
                                 </tr>
                             ";
@@ -52,3 +70,6 @@
         </div>
     </body>
 </html>
+<?php
+}
+?>
