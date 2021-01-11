@@ -10,8 +10,33 @@ if(isset($_GET['null'])){
     $exp = explode("&", $ss);
     $account = explode("=", $exp[1]);
     $ac = $account[1];
+}elseif (isset($_GET['wrgem'])) {
+    $msg = "Username atau Email salah";
+    echo "
+    <div class='error'>
+        <p>".nl2br($msg)."</p>
+    </div>
+    ";
+    $ss = $_SERVER['REQUEST_URI'];
+    $exp = explode("&", $ss);
+    $account = explode("=", $exp[1]);
+    if (str_contains($account[1], '%40')) {
+        $ac = str_replace("%40", "@", $account[1]);
+    }else {
+        $ac = $account[1];
+    }
+}elseif (isset($_GET['wrgpas'])) {
+    $msg = "Password salah";
+    echo "
+    <div class='error'>
+        <p>".nl2br($msg)."</p>
+    </div>
+    ";
+    $ss = $_SERVER['REQUEST_URI'];
+    $exp = explode("&", $ss);
+    $account = explode("=", $exp[1]);
+    $ac = $account[1];
 }
-// var_dump($account);
 
 // $nama1 = explode("=", $exp[2]);
 // $nama2 = $nama1[1];

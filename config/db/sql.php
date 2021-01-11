@@ -1,8 +1,8 @@
 <?php
-$sql = "SELECT MAX(id_pelanggan) FROM pelanggan";
+$sql = "SELECT COUNT(id_pelanggan) FROM pelanggan";
 $rsl = mysqli_query($koneksi, $sql);
 $row = mysqli_fetch_assoc($rsl);
-$max = ++$row["MAX(id_pelanggan)"]; // output: 2
+$max = ++$row["COUNT(id_pelanggan)"]; // output: 2
 $str = strval($max);
 
 $x = "SELECT * FROM pelanggan WHERE id_pelanggan = '$max'";

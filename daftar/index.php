@@ -17,13 +17,13 @@ if (!isset($_SESSION['id'])) {
         <div class="form-center">
             <form action="../config/proses_daftar.php" method="post">
                 <p>Nama Pelanggan</p>
-                <input required type="text" name="nama" value="<?= str_replace("+", " ", $nama[1]) ?>">
+                <input required type="text" name="nama" value="<?= isset($nama[1])?str_replace("+", " ", $nama[1]):'' ?>">
                 <p>Nomor Telepon</p>
-                <input required type="number" name="telefon" value="<?= str_replace("+", " ", $telp[1]) ?>">
+                <input required type="number" name="telefon" value="<?= isset($telp[1])?str_replace("+", " ", $telp[1]):'' ?>">
                 <p>Email</p>
-                <input required type="email" name="email" value="<?= str_replace("+", " ", $email[1]) ?>">
+                <input required type="email" name="email" value="<?= isset($email[1])?str_replace("+", " ", $email[1]):'' ?>">
                 <p>Username</p>
-                <input required type="text" name="username" value="<?= str_replace("+", " ", $usr[1]) ?>">
+                <input required type="text" name="username" value="<?= isset($usr[1])?str_replace("+", " ", $usr[1]):'' ?>">
                 <p>Password</p>
                 <input required type="password" name="pass">
                 <button required type="submit" class="zenter btn-kirim">Daftar</button>

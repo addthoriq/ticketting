@@ -13,38 +13,32 @@ if(isset($_GET['msg'])){
     $m = explode("=", $exp[3]);
     $email = str_replace("%40", "@", $m);
     $usr = explode("=", $exp[4]);
-
-    $nama1 = explode("=", $exp[2]);
-    $nama2 = $nama1[1];
-    $telp1 = explode("=", $exp[3]);
-    $telp2 = $telp1[1];
-    $m1 = explode("=", $exp[4]);
-    $email1 = str_replace("%40", "@", $m1);
-    $email2 = $email1[1];
-    $usr1 = explode("=", $exp[5]);
-    $usr2 = $usr1[1];
-}elseif (isset($_GET['err'])) {
-    $msg = "Email atau Username telah terdaftar";
+}elseif (isset($_GET['errem'])) {
+    $msg = "Email telah terdaftar";
     echo "
     <div class='error'>
         <p>".nl2br($msg)."</p>
     </div>
     ";
-    // $ss = $_SERVER['REQUEST_URI'];
-    // $exp = explode("&", $ss);
-    // $nama = explode("=", $exp[2]);
-    // $telp = explode("=", $exp[3]);
-    // $m = explode("=", $exp[4]);
-    // $email = str_replace("%40", "@", $m);
-    // $usr = explode("=", $exp[5]);
-    //
-    // $nama1 = explode("=", $exp[2]);
-    // $nama2 = $nama1[1];
-    // $telp1 = explode("=", $exp[3]);
-    // $telp2 = $telp1[1];
-    // $m1 = explode("=", $exp[4]);
-    // $email1 = str_replace("%40", "@", $m1);
-    // $email2 = $email1[1];
-    // $usr1 = explode("=", $exp[5]);
-    // $usr2 = $usr1[1];
+    $ss = $_SERVER['REQUEST_URI'];
+    $exp = explode("&", $ss);
+    $nama = explode("=", $exp[1]);
+    $telp = explode("=", $exp[2]);
+    $m = explode("=", $exp[3]);
+    $email = str_replace("%40", "@", $m);
+    $usr = explode("=", $exp[4]);
+}elseif (isset($_GET['errus'])) {
+    $msg = "Username telah terdaftar";
+    echo "
+    <div class='error'>
+        <p>".nl2br($msg)."</p>
+    </div>
+    ";
+    $ss = $_SERVER['REQUEST_URI'];
+    $exp = explode("&", $ss);
+    $nama = explode("=", $exp[1]);
+    $telp = explode("=", $exp[2]);
+    $m = explode("=", $exp[3]);
+    $email = str_replace("%40", "@", $m);
+    $usr = explode("=", $exp[4]);
 }

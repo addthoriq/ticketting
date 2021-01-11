@@ -46,8 +46,8 @@
                 <li class="dropdown jstfy-link active">
                     <a href="#" class="dropbtn">Daftar/Masuk</a>
                     <div class="dropdown-content">
-                        <a href="../daftar/index.php">Daftar</a>
-                        <a href="../login/index.php" class="active-content">Masuk</a>
+                        <a href="../daftar/index.php" class="active-content">Daftar</a>
+                        <a href="../login/index.php">Masuk</a>
                     </div>
                 </li>
                 <?php
