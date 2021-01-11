@@ -22,7 +22,7 @@
                     if (isset($_SESSION['id'])) {
                 ?>
                     <li class="dropdown jstfy-link">
-                        <a href="#" class="dropbtn"><?= $_SESSION['nama'] ?></a>
+                        <a href="../pelanggan/index.php" class="dropbtn"><?= $_SESSION['nama'] ?></a>
                         <div class="dropdown-content">
                             <a href="pelanggan/index.php">Profil</a>
                             <a href="config/logout.php">Keluar</a>
@@ -63,7 +63,7 @@
                     }else {
                 ?>
                 <li class="dropdown jstfy-link">
-                    <a href="#" class="dropbtn"><?= $_SESSION['nama'] ?></a>
+                    <a href="../pelanggan/index.php" class="dropbtn"><?= $_SESSION['nama'] ?></a>
                     <div class="dropdown-content">
                         <a href="../pelanggan/index.php">Profil</a>
                         <a href="../config/logout.php">Keluar</a>
@@ -94,7 +94,7 @@
                     }else {
                 ?>
                 <li class="dropdown jstfy-link">
-                    <a href="#" class="dropbtn"><?= $_SESSION['nama'] ?></a>
+                    <a href="../pelanggan/index.php" class="dropbtn"><?= $_SESSION['nama'] ?></a>
                     <div class="dropdown-content">
                         <a href="../pelanggan/index.php">Profil</a>
                         <a href="../config/logout.php">Keluar</a>
@@ -110,9 +110,9 @@
     ?>
         <ul class="jstfy">
             <li class="jstfy-link"><a href="../index.php">Beranda</a></li>
-            <li class="jstfy-link"><a href="pemesanan/index.php">Pemesanan</a></li>
+            <li class="jstfy-link"><a href="../pemesanan/index.php">Pemesanan</a></li>
             <li class="dropdown jstfy-link">
-                <a href="#" class="dropbtn active"><?= $row['nama_pelanggan'] ?></a>
+                <a href="../pelanggan/index.php" class="dropbtn active"><?= $row['nama_pelanggan'] ?></a>
                 <div class="dropdown-content">
                     <a href="../pelanggan/index.php" class="active-content">Profil</a>
                     <a href="../config/logout.php">Keluar</a>
@@ -129,7 +129,7 @@
                     if (isset($_SESSION['id'])) {
                 ?>
                     <li class="dropdown jstfy-link">
-                        <a href="#" class="dropbtn"><?= $_SESSION['nama'] ?></a>
+                        <a href="../pelanggan/index.php" class="dropbtn"><?= $_SESSION['nama'] ?></a>
                         <div class="dropdown-content">
                             <a href="../pelanggan/index.php">Profil</a>
                             <a href="../config/logout.php">Keluar</a>
@@ -169,9 +169,9 @@
                     if (isset($_SESSION['id'])) {
                 ?>
                     <li class="dropdown jstfy-link">
-                        <a href="#" class="dropbtn"><?= $_SESSION['nama'] ?></a>
+                        <a href="../pegawai/index.php" class="dropbtn"><?= $_SESSION['nama'] ?></a>
                         <div class="dropdown-content">
-                            <a href="../pelanggan/index.php">Profil</a>
+                            <a href="../pegawai/index.php">Profil</a>
                             <a href="../config/logout.php">Keluar</a>
                         </div>
                     </li>
@@ -188,6 +188,20 @@
                 <?php
                     }
                 ?>
+            </ul>
+    <?php
+        }elseif ($explode[2]=="pegawai") {
+    ?>
+            <ul class="jstfy">
+                <li class="jstfy-link"><a href="../index.php">Beranda</a></li>
+                <li class="jstfy-link"><a href="../laporan/index.php">Laporan</a></li>
+                <li class="dropdown jstfy-link">
+                    <a href="#" class="dropbtn active"><?= $row['nama_pegawai'] ?></a>
+                    <div class="dropdown-content">
+                        <a href="../pelanggan/index.php" class="active-content">Profil</a>
+                        <a href="../config/logout.php">Keluar</a>
+                    </div>
+                </li>
             </ul>
     <?php
         }
