@@ -91,16 +91,15 @@ CREATE TABLE `pemesanan` (
   `id_pemesanan` varchar(5) NOT NULL,
   `id_pelanggan` varchar(5) NOT NULL,
   `id_tiket` varchar(5) NOT NULL,
-  `tanggal_pesan` date NOT NULL,
-  `harga` int(9) NOT NULL
+  `tanggal_pesan` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `pemesanan`
 --
 
-INSERT INTO `pemesanan` (`id_pemesanan`, `id_pelanggan`, `id_tiket`, `tanggal_pesan`, `harga`) VALUES
-('1', '1', '1', '2021-01-10', 80000);
+INSERT INTO `pemesanan` (`id_pemesanan`, `id_pelanggan`, `id_tiket`, `tanggal_pesan`) VALUES
+('1', '1', '1', '2021-01-10');
 
 -- --------------------------------------------------------
 
@@ -113,15 +112,16 @@ CREATE TABLE `rute` (
   `jam_berangkat` varchar(5) NOT NULL,
   `asal_rute` text NOT NULL,
   `tujuan_rute` text NOT NULL,
-  `maskapai` varchar(10) NOT NULL
+  `maskapai` varchar(10) NOT NULL,
+  `harga` int(9) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `rute`
 --
 
-INSERT INTO `rute` (`id_rute`, `jam_berangkat`, `asal_rute`, `tujuan_rute`, `maskapai`) VALUES
-('1', '11:50', 'medan', 'bandung', 'citilink');
+INSERT INTO `rute` (`id_rute`, `jam_berangkat`, `asal_rute`, `tujuan_rute`, `maskapai`, `harga`) VALUES
+('1', '11:50', 'medan', 'bandung', 'citilink', 80000);
 
 -- --------------------------------------------------------
 
@@ -133,15 +133,16 @@ CREATE TABLE `tiket` (
   `id_tiket` varchar(5) NOT NULL,
   `id_rute` varchar(5) NOT NULL,
   `nomor_kursi` text NOT NULL,
-  `kelas` text NOT NULL
+  `kelas` text NOT NULL,
+  `harga` int(9) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `tiket`
 --
 
-INSERT INTO `tiket` (`id_tiket`, `id_rute`, `nomor_kursi`, `kelas`) VALUES
-('1', '1', '12', 'ekonomi');
+INSERT INTO `tiket` (`id_tiket`, `id_rute`, `nomor_kursi`, `kelas`, `harga`) VALUES
+('1', '1', '12', 'ekonomi', 150000);
 
 -- --------------------------------------------------------
 

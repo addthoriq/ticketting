@@ -70,7 +70,7 @@ if (isset($_SESSION['id'])) {
                 </div>
                 <div class="flex-row-item">
                     <label class="labelu">Harga</label>
-                    <input class="inputto" type="text" name="kursi" disabled value="<?= rupiah($hsp['harga']) ?>">
+                    <input class="inputto" type="text" name="kursi" disabled value="<?= rupiah($hst['harga']) ?>">
                 </div>
             </form>
         </div>

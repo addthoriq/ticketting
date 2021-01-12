@@ -74,6 +74,8 @@ else {
             $sql = mysqli_query($koneksi, $qry);
             $row = mysqli_fetch_assoc($sql);
 
+            var_dump($id_tx);die;
+
             $id_rt = $row['id_rute'];
             $qry1 = "SELECT * FROM rute WHERE id_rute = '$id_rt'";
             $sql1 = mysqli_query($koneksi,$qry1);

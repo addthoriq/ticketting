@@ -31,7 +31,7 @@ if (!isset($_SESSION['id'])) {
             $mx = ++$r["COUNT(id_tiket)"];
             $ide = strval($mx);
         ?>
-        <div class="form-center" style="margin-top: 20px">
+        <div class="form-center" style="margin-top: 20px;">
             <form action="config/proses_pesan.php?rute=<?=$id?>&tiket=<?=$ide?>" method="post" class="flex-row">
                 <div class="flex-row-item">
                     <label class="labelu">Maskapai</label>
@@ -54,8 +54,12 @@ if (!isset($_SESSION['id'])) {
                     <input class="inputto" type="text" name="kursi">
                 </div>
                 <div class="flex-row-item">
+                    <label class="labelu">Harga</label>
+                    <input class="inputto" type="text" name="harga">
+                </div>
+                <div class="flex-row-item">
                     <label class="labelu">Kelas</label>
-                    <select style="width: 50%" name="kelas">
+                    <select name="kelas">
                         <option disabled>-- Pilih Kelas --</option>
                         <option value="first class">First Class</option>
                         <option value="bisnis">Bisnis</option>
