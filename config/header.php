@@ -48,7 +48,7 @@
             <ul class="jstfy">
                 <li class="jstfy-link"><a href="../index.php">Beranda</a></li>
 
-                <li class="jstfy-link"><a href="pemesanan/index.php">Pemesanan</a></li>
+                <li class="jstfy-link"><a href="../pemesanan/index.php">Pemesanan</a></li>
                 <?php
                     if (!isset($_SESSION['id'])) {
                 ?>

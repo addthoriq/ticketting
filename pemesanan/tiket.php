@@ -30,6 +30,11 @@ if (!isset($_SESSION['id'])) {
             $r = mysqli_fetch_assoc($qqq);
             $mx = ++$r["COUNT(id_tiket)"];
             $ide = strval($mx);
+
+            function rupiah($x){
+                $rupiah = "Rp".number_format($x,0,",",".").",-";
+                return $rupiah;
+            }
         ?>
         <div class="form-center" style="margin-top: 20px;">
             <form action="config/proses_pesan.php?rute=<?=$id?>&tiket=<?=$ide?>" method="post" class="flex-row">
@@ -55,21 +60,29 @@ if (!isset($_SESSION['id'])) {
                 </div>
                 <div class="flex-row-item">
                     <label class="labelu">Harga</label>
-                    <input class="inputto" type="text" name="harga">
+                    <input class="inputto" type="text" id="harga" name="harga" readonly value="<?= rupiah($row['harga']) ?>">
                 </div>
                 <div class="flex-row-item">
                     <label class="labelu">Kelas</label>
-                    <select name="kelas">
-                        <option disabled>-- Pilih Kelas --</option>
+                    <select name="kelas" id="kelas" onchange="proses()">
+                        <option label="">-- Pilih Kelas --</option>
                         <option value="first class">First Class</option>
                         <option value="bisnis">Bisnis</option>
                         <option value="ekonomi">Ekonomi</option>
                     </select>
                     <!-- <input class="inputto" type="text" name="kelas"> -->
                 </div>
-                <button type="submit" class="zenter btn-kirim-book">Pesan</button>
+                <div class="flex-row-item">
+                    <button type="submit" class="btn-kirim-book" style="margin: 20px auto">Pesan</button>
+                </div>
             </form>
         </div>
+
+
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!-- <script src="config/jq.min.js"></script> -->
+        <script src="config/skrip.js"></script>
     </body>
 </html>
 <!-- Sudah Login -->

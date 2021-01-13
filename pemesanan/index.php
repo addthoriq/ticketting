@@ -24,6 +24,7 @@ if (!isset($_SESSION['id'])) {
                 <th>Keberangkatan</th>
                 <th>Kedatangan</th>
                 <th>Jam Keberangkatan</th>
+                <th>Harga</th>
                 <th>Pemesanan</th>
             </tr>
             <?php
@@ -31,6 +32,10 @@ if (!isset($_SESSION['id'])) {
                 $nomor = 1;
                 $querry = "SELECT * FROM rute";
                 $results = mysqli_query($koneksi, $querry);
+                function rupiah($x){
+                    $rupiah = "Rp".number_format($x,0,",",".").",-";
+                    return $rupiah;
+                }
                 if (mysqli_num_rows($results)>0) {
                     while ($row = mysqli_fetch_assoc($results)) {
                         echo "
@@ -40,6 +45,7 @@ if (!isset($_SESSION['id'])) {
                                 <td>".ucwords($row['asal_rute'])."</td>
                                 <td>".ucwords($row['tujuan_rute'])."</td>
                                 <td style='text-align: center;'>".$row['jam_berangkat']."</td>
+                                <td style='text-align: center;'>".rupiah($row['harga'])."</td>
                                 <td style='text-align: center;'><a href='tiket.php?rute=".$row['id_rute']."' class='btn-book'>Booking</a></td>
                             </tr>
                         ";

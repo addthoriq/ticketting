@@ -205,7 +205,7 @@ table th {
     flex: 50%; /*grow | shrink | basis */
     height: 70px;
     width: 100px;
-    display: inline-block;
+    margin: auto;
 }
 .labelu, .inputto{
     display: block;
