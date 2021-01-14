@@ -30,15 +30,15 @@ SET time_zone = "+00:00";
 CREATE TABLE `laporan` (
   `id_laporan` varchar(5) NOT NULL,
   `id_transaksi` varchar(5) NOT NULL,
-  `id_pegawai` varchar(5) NOT NULL
+  `id_pelanggan` varchar(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `laporan`
 --
 
-INSERT INTO `laporan` (`id_laporan`, `id_transaksi`, `id_pegawai`) VALUES
-('', '1', '1');
+INSERT INTO `laporan` (`id_laporan`, `id_transaksi`, `id_pelanggan`) VALUES
+('1', '1', '1');
 
 -- --------------------------------------------------------
 
@@ -173,7 +173,7 @@ INSERT INTO `transaksi` (`id_transaksi`, `id_pemesanan`, `tanggal_transaksi`) VA
 ALTER TABLE `laporan`
   ADD PRIMARY KEY (`id_laporan`),
   ADD KEY `id_transaksi` (`id_transaksi`),
-  ADD KEY `id_pegawai` (`id_pegawai`);
+  ADD KEY `id_pelanggan` (`id_pelanggan`);
 
 --
 -- Indeks untuk tabel `pegawai`
@@ -223,7 +223,7 @@ ALTER TABLE `transaksi`
 -- Ketidakleluasaan untuk tabel `laporan`
 --
 ALTER TABLE `laporan`
-  ADD CONSTRAINT `laporan_ibfk_1` FOREIGN KEY (`id_pegawai`) REFERENCES `pegawai` (`id_pegawai`),
+  ADD CONSTRAINT `laporan_ibfk_1` FOREIGN KEY (`id_pelanggan`) REFERENCES `pelanggan` (`id_pelanggan`),
   ADD CONSTRAINT `laporan_ibfk_2` FOREIGN KEY (`id_transaksi`) REFERENCES `transaksi` (`id_transaksi`);
 
 --

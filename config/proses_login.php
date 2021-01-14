@@ -55,6 +55,7 @@ if (isset($_GET['tx']) && isset($_GET['username'])) {
                 $_SESSION['id'] = $pg['id_pegawai'];
                 $_SESSION['nama'] = $pg['nama_pegawai'];
                 $_SESSION['nama_pegawai'] = $pg['nama_pegawai']; //untuk header laporan&pemesanan
+                $_SESSION['nama'] = $pg['nama_pegawai']; //untuk header laporan&pemesanan
                 $_SESSION['password'] = $pg['password'];
                 header('Location: ../index.php');
             }elseif ($usr != $pl['email'] && $usr != $pl['username']) {

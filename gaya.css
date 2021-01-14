@@ -175,7 +175,17 @@ table th {
     border-radius: 10px;
     font-weight: bold;
     width: 50%;
-    margin: auto;
+    margin: 20px auto;
+}
+.notif-red{
+    background-color: #d6132a;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    width: 50%;
+    margin: 20px auto;
 }
 .a-hrep{
     color: #3a6494;
